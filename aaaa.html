@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.bootcss.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title>Web Pages Demo</title>
+</head>
+<body>
+<h1>Hello Web Pages</h1>
+<p id="cityname">The time is @DateTime.Now</p>
+<button type="button" onclick="tset()">gettq</button>
+<button id="button">他亲戚</button>
+<div></div>
+</body>
+<script>
+    function  gettianqibyjquery() {
+        var xmlhttp = new XMLHttpRequest();
+
+
+
+        xmlhttp.open("GET","http://v.juhe.cn/weather/index?format=2&cityname=绵阳&key=f497fe97cbb907c86cce0a0cc5b78bde", true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.setRequestHeader()
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                var linr = "";
+                for (var i = 0 in myObj.reason) {
+                    document.getElementsByName('ul');
+                    alert(i);
+
+                }
+
+
+            }
+            else {
+                alert("wdqddd");
+            }
+
+        };
+        }
+    function tset() {
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.open("get","http://v.juhe.cn/weather/index?format=2&cityname=绵阳&key=f497fe97cbb907c86cce0a0cc5b78bde", true);
+        xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+        xmlhttp.send();
+        xmlhttp.onreadystatechange=function () {
+            alert(xmlhttp.status+"D");
+            if(xmlhttp.readyState==4&&xmlhttp.status==200){
+                var obj=xmlhttp.response;
+                alert(obj.reason);
+            }
+
+
+        };
+
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.bootcss.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<button onclick="jh()">test</button>
+
+</body>
+<script>
+    function tset() {
+        var xmlhttp=new XMLHttpRequest();
+
+
+        xmlhttp.onreadystatechange=jsonpCallback;
+        function jsonpCallback() {
+            alert(xmlhttp.readyState);
+
+            if(xmlhttp.readyState==4&&xmlhttp.status==200){
+                var obj=JSON.parse(xmlhttp.responseText);
+                if(obj.error){
+                    alert(obj.error()+"d");
+                }
+                else {
+                    alert("we");
+                }
+            }
+            else {
+                alert("ss");
+            }
+
+        };
+        xmlhttp.open("get","http://api.map.baidu.com/telematics/v3/weather?location=嘉兴&output=json&ak=08UzmUcaGZmkhH9sNZ1fUsPUnEAeZuxs", true);
+        xmlhttp.setRequestHeader("Content-tybe","application/json");
+        xmlhttp.send();
+
+    }
+    function jh() {
+        $.ajax({
+            url:"http://v.juhe.cn/weather/index",
+            data:{key:"f497fe97cbb907c86cce0a0cc5b78bde",cityname:"绵阳"},
+            headers:{
+                "X-Auth-Token":"open-sesame",
+                "Content-Type":"application/json"
+            },
+            contentType: 'text/html; charset=UTF-8',
+            dataType: "json",
+            type:"get",
+            success:function (res) {
+                console.log(res.text);
+            }
+        })
+
+    }
+</script>
+</html>

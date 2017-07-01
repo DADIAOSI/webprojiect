@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=08UzmUcaGZmkhH9sNZ1fUsPUnEAeZuxs"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mycss.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-6 col-lg-4">
+                <h1>one</h1>
+            </div>
+            <div class="col-xs-6 col-lg-4">
+                <h1>one</h1>
+            </div>
+            <div class="col-xs-6 col-lg-4">
+                <h1>one</h1>
+            </div>
+            <div class="col-xs-6 col-lg-4">
+                <h1>one</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-lg-2">
+                <h1>one</h1>
+            </div>
+            <div class="col-xs-6 col-lg-2">
+                <h1>one</h1>
+            </div>
+            <div class="col-xs-6 col-lg-2">
+                <h1>one</h1>
+            </div>
+            <div class="col-xs-6 col-lg-2">
+                <h1>one</h1>
+            </div>
+            <div class="col-xs-6 col-lg-2">
+                <h1>one</h1>
+            </div>
+            <div class="col-xs-6 col-lg-2">
+                <h1>one</h1>
+            </div>
+        </div>
+        <div class="row"></div>
+    </div>
+
+
+    </div>
+
+
+</body>
+<!--<script>-->
+    <!--$(document).ready(function () {-->
+        <!--$('.carousel').carousel({-->
+            <!--interval:8000-->
+        <!--});-->
+
+    <!--});-->
+<!--</script>-->
+<script>
+    var map = new BMap.Map("container1");          // 创建地图实例
+    var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
+    map.centerAndZoom(point, 15);
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.ScaleControl());
+    map.addControl(new BMap.OverviewMapControl());
+    map.addControl(new BMap.MapTypeControl());
+    map.setCurrentCity("北京");
+</script>
+</html>
